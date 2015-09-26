@@ -22,10 +22,10 @@ Vagrant.configure(2) do |config|
 
   # Puppet provisioner
   config.vm.provision "puppet" do |puppet|
+
     puppet.hiera_config_path = 'puppet/hiera.yaml'
-    puppet.module_path = 'puppet/modules'
-    puppet.manifests_path = 'puppet/manifests'
-    puppet.manifest_file = 'site.pp'
+    puppet.environment_path = 'puppet/environments'
+    puppet.environment = env_config[:environment]
 
     if env_config[:debug]
       puppet.options = '--verbose --debug'

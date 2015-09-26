@@ -1,8 +1,9 @@
 ---
 :hierarchy:
-    - common
+    - "%{::environment}/hieradata/common"
+    - "common/hieradata/common"
 :backends:
-    - yaml
+    - "yaml"
 :yaml:
-    :datadir: /vagrant/puppet/hieradata
+    :datadir: "/vagrant/puppet/environments"
 
